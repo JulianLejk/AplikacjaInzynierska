@@ -1,0 +1,10 @@
+c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\bin\Debug\AplikacjaInzynierska.exe.config
+c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\bin\Debug\AplikacjaInzynierska.exe
+c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\bin\Debug\AplikacjaInzynierska.pdb
+c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.Properties.Resources.resources
+c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.csproj.GenerateResource.Cache
+c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.exe
+c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.pdb
+c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.csprojResolveAssemblyReference.cache
+c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormDodajZlecenie.resources
+c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormGlowna.resources
