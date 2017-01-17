@@ -8,3 +8,4 @@ c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\Aplik
 c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.csprojResolveAssemblyReference.cache
 c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormDodajZlecenie.resources
 c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormGlowna.resources
+c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormZadania.resources

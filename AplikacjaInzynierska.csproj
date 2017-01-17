@@ -63,6 +63,12 @@
     <Compile Include="FormDodajZlecenie.Designer.cs">
       <DependentUpon>FormDodajZlecenie.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormZadania.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormZadania.Designer.cs">
+      <DependentUpon>FormZadania.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormGlowna.resx">
@@ -70,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDodajZlecenie.resx">
       <DependentUpon>FormDodajZlecenie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormZadania.resx">
+      <DependentUpon>FormZadania.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

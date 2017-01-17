@@ -46,7 +46,9 @@
             this.textBoxFDZNumerTelefonu = new System.Windows.Forms.TextBox();
             this.butFDZDodaj = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBoxFDZOsobaOdpowiedzialna = new System.Windows.Forms.TextBox();
+            this.datadoINZDataSet1 = new AplikacjaInzynierska.DatadoINZDataSet();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.datadoINZDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -186,20 +188,26 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Osoba Odpowiedzialna";
             // 
-            // textBoxFDZOsobaOdpowiedzialna
+            // datadoINZDataSet1
             // 
-            this.textBoxFDZOsobaOdpowiedzialna.Location = new System.Drawing.Point(573, 39);
-            this.textBoxFDZOsobaOdpowiedzialna.Name = "textBoxFDZOsobaOdpowiedzialna";
-            this.textBoxFDZOsobaOdpowiedzialna.Size = new System.Drawing.Size(116, 20);
-            this.textBoxFDZOsobaOdpowiedzialna.TabIndex = 17;
+            this.datadoINZDataSet1.DataSetName = "DatadoINZDataSet";
+            this.datadoINZDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(573, 39);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 19;
             // 
             // FormDodajZlecenie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 270);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBoxFDZOsobaOdpowiedzialna);
             this.Controls.Add(this.butFDZDodaj);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxFDZNumerTelefonu);
@@ -218,7 +226,8 @@
             this.Controls.Add(this.textBoxFDZNazwaZlenienia);
             this.Controls.Add(this.label1);
             this.Name = "FormDodajZlecenie";
-            this.Text = "FormDodajZlecenie";
+            this.Text = "DodajZlecenie";
+            ((System.ComponentModel.ISupportInitialize)(this.datadoINZDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,6 +253,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butFDZDodaj;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBoxFDZOsobaOdpowiedzialna;
+        private DatadoINZDataSet datadoINZDataSet1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

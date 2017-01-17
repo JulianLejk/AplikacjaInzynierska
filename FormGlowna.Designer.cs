@@ -61,23 +61,31 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabZlecenia = new System.Windows.Forms.TabPage();
-            this.tabMagazyn = new System.Windows.Forms.TabPage();
-            this.tabTerminarz = new System.Windows.Forms.TabPage();
-            this.dGVZlecenie = new System.Windows.Forms.DataGridView();
-            this.bDodajZLecenie = new System.Windows.Forms.Button();
-            this.bPokazZadania = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.butDodajPrzedmiot = new System.Windows.Forms.Button();
-            this.butUsunPrzedmiot = new System.Windows.Forms.Button();
-            this.butSzukajPrzedmiot = new System.Windows.Forms.Button();
             this.monthCalendarZlecenie = new System.Windows.Forms.MonthCalendar();
+            this.button3 = new System.Windows.Forms.Button();
+            this.butFGlownaPokazZadania = new System.Windows.Forms.Button();
+            this.butFGlownaDodajZLecenie = new System.Windows.Forms.Button();
+            this.dataGVZlecenie = new System.Windows.Forms.DataGridView();
+            this.tabMagazyn = new System.Windows.Forms.TabPage();
+            this.butFGlownaSzukajPrzedmiot = new System.Windows.Forms.Button();
+            this.butFGlownaUsunPrzedmiot = new System.Windows.Forms.Button();
+            this.butFGlownaDodajPrzedmiot = new System.Windows.Forms.Button();
+            this.dataGVMagazyn = new System.Windows.Forms.DataGridView();
+            this.tabTerminarz = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabZlecenia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVZlecenie)).BeginInit();
             this.tabMagazyn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVZlecenie)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVMagazyn)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -125,13 +133,13 @@
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -139,19 +147,19 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveAsToolStripMenuItem.Text = "Save &As";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
             // 
             // printToolStripMenuItem
             // 
@@ -159,7 +167,7 @@
             this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.printToolStripMenuItem.Text = "&Print";
             // 
             // printPreviewToolStripMenuItem
@@ -167,18 +175,18 @@
             this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
             this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // editToolStripMenuItem
@@ -200,20 +208,20 @@
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.undoToolStripMenuItem.Text = "&Undo";
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.redoToolStripMenuItem.Text = "&Redo";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(141, 6);
             // 
             // cutToolStripMenuItem
             // 
@@ -221,7 +229,7 @@
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.cutToolStripMenuItem.Text = "Cu&t";
             // 
             // copyToolStripMenuItem
@@ -230,7 +238,7 @@
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.copyToolStripMenuItem.Text = "&Copy";
             // 
             // pasteToolStripMenuItem
@@ -239,18 +247,18 @@
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.pasteToolStripMenuItem.Text = "&Paste";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(141, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
             // toolsToolStripMenuItem
@@ -265,13 +273,13 @@
             // customizeToolStripMenuItem
             // 
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.customizeToolStripMenuItem.Text = "&Customize";
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // helpToolStripMenuItem
@@ -289,30 +297,30 @@
             // contentsToolStripMenuItem
             // 
             this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
             // 
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
             // tabMain
@@ -320,6 +328,9 @@
             this.tabMain.Controls.Add(this.tabZlecenia);
             this.tabMain.Controls.Add(this.tabMagazyn);
             this.tabMain.Controls.Add(this.tabTerminarz);
+            this.tabMain.Controls.Add(this.tabPage1);
+            this.tabMain.Controls.Add(this.tabPage2);
+            this.tabMain.Controls.Add(this.tabPage3);
             this.tabMain.Location = new System.Drawing.Point(13, 28);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
@@ -330,9 +341,9 @@
             // 
             this.tabZlecenia.Controls.Add(this.monthCalendarZlecenie);
             this.tabZlecenia.Controls.Add(this.button3);
-            this.tabZlecenia.Controls.Add(this.bPokazZadania);
-            this.tabZlecenia.Controls.Add(this.bDodajZLecenie);
-            this.tabZlecenia.Controls.Add(this.dGVZlecenie);
+            this.tabZlecenia.Controls.Add(this.butFGlownaPokazZadania);
+            this.tabZlecenia.Controls.Add(this.butFGlownaDodajZLecenie);
+            this.tabZlecenia.Controls.Add(this.dataGVZlecenie);
             this.tabZlecenia.Location = new System.Drawing.Point(4, 22);
             this.tabZlecenia.Name = "tabZlecenia";
             this.tabZlecenia.Padding = new System.Windows.Forms.Padding(3);
@@ -341,12 +352,53 @@
             this.tabZlecenia.Text = "Zlecenia";
             this.tabZlecenia.UseVisualStyleBackColor = true;
             // 
+            // monthCalendarZlecenie
+            // 
+            this.monthCalendarZlecenie.Location = new System.Drawing.Point(537, 194);
+            this.monthCalendarZlecenie.Name = "monthCalendarZlecenie";
+            this.monthCalendarZlecenie.TabIndex = 4;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(609, 105);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // butFGlownaPokazZadania
+            // 
+            this.butFGlownaPokazZadania.Location = new System.Drawing.Point(537, 56);
+            this.butFGlownaPokazZadania.Name = "butFGlownaPokazZadania";
+            this.butFGlownaPokazZadania.Size = new System.Drawing.Size(142, 23);
+            this.butFGlownaPokazZadania.TabIndex = 2;
+            this.butFGlownaPokazZadania.Text = "Pokaz Zadania";
+            this.butFGlownaPokazZadania.UseVisualStyleBackColor = true;
+            // 
+            // butFGlownaDodajZLecenie
+            // 
+            this.butFGlownaDodajZLecenie.Location = new System.Drawing.Point(537, 6);
+            this.butFGlownaDodajZLecenie.Name = "butFGlownaDodajZLecenie";
+            this.butFGlownaDodajZLecenie.Size = new System.Drawing.Size(142, 23);
+            this.butFGlownaDodajZLecenie.TabIndex = 1;
+            this.butFGlownaDodajZLecenie.Text = "Dodaj Zlecenie";
+            this.butFGlownaDodajZLecenie.UseVisualStyleBackColor = true;
+            // 
+            // dataGVZlecenie
+            // 
+            this.dataGVZlecenie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVZlecenie.Location = new System.Drawing.Point(6, 6);
+            this.dataGVZlecenie.Name = "dataGVZlecenie";
+            this.dataGVZlecenie.Size = new System.Drawing.Size(519, 350);
+            this.dataGVZlecenie.TabIndex = 0;
+            // 
             // tabMagazyn
             // 
-            this.tabMagazyn.Controls.Add(this.butSzukajPrzedmiot);
-            this.tabMagazyn.Controls.Add(this.butUsunPrzedmiot);
-            this.tabMagazyn.Controls.Add(this.butDodajPrzedmiot);
-            this.tabMagazyn.Controls.Add(this.dataGridView1);
+            this.tabMagazyn.Controls.Add(this.butFGlownaSzukajPrzedmiot);
+            this.tabMagazyn.Controls.Add(this.butFGlownaUsunPrzedmiot);
+            this.tabMagazyn.Controls.Add(this.butFGlownaDodajPrzedmiot);
+            this.tabMagazyn.Controls.Add(this.dataGVMagazyn);
             this.tabMagazyn.Location = new System.Drawing.Point(4, 22);
             this.tabMagazyn.Name = "tabMagazyn";
             this.tabMagazyn.Padding = new System.Windows.Forms.Padding(3);
@@ -354,6 +406,41 @@
             this.tabMagazyn.TabIndex = 1;
             this.tabMagazyn.Text = "Magazyn";
             this.tabMagazyn.UseVisualStyleBackColor = true;
+            // 
+            // butFGlownaSzukajPrzedmiot
+            // 
+            this.butFGlownaSzukajPrzedmiot.Location = new System.Drawing.Point(655, 65);
+            this.butFGlownaSzukajPrzedmiot.Name = "butFGlownaSzukajPrzedmiot";
+            this.butFGlownaSzukajPrzedmiot.Size = new System.Drawing.Size(154, 23);
+            this.butFGlownaSzukajPrzedmiot.TabIndex = 3;
+            this.butFGlownaSzukajPrzedmiot.Text = "Szukaj Przedmiot";
+            this.butFGlownaSzukajPrzedmiot.UseVisualStyleBackColor = true;
+            // 
+            // butFGlownaUsunPrzedmiot
+            // 
+            this.butFGlownaUsunPrzedmiot.Location = new System.Drawing.Point(655, 36);
+            this.butFGlownaUsunPrzedmiot.Name = "butFGlownaUsunPrzedmiot";
+            this.butFGlownaUsunPrzedmiot.Size = new System.Drawing.Size(154, 23);
+            this.butFGlownaUsunPrzedmiot.TabIndex = 2;
+            this.butFGlownaUsunPrzedmiot.Text = "Usuń Przedmiot";
+            this.butFGlownaUsunPrzedmiot.UseVisualStyleBackColor = true;
+            // 
+            // butFGlownaDodajPrzedmiot
+            // 
+            this.butFGlownaDodajPrzedmiot.Location = new System.Drawing.Point(655, 7);
+            this.butFGlownaDodajPrzedmiot.Name = "butFGlownaDodajPrzedmiot";
+            this.butFGlownaDodajPrzedmiot.Size = new System.Drawing.Size(154, 23);
+            this.butFGlownaDodajPrzedmiot.TabIndex = 1;
+            this.butFGlownaDodajPrzedmiot.Text = "Dodaj Przedmiot";
+            this.butFGlownaDodajPrzedmiot.UseVisualStyleBackColor = true;
+            // 
+            // dataGVMagazyn
+            // 
+            this.dataGVMagazyn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVMagazyn.Location = new System.Drawing.Point(7, 7);
+            this.dataGVMagazyn.Name = "dataGVMagazyn";
+            this.dataGVMagazyn.Size = new System.Drawing.Size(630, 349);
+            this.dataGVMagazyn.TabIndex = 0;
             // 
             // tabTerminarz
             // 
@@ -365,83 +452,71 @@
             this.tabTerminarz.Text = "Terminarz";
             this.tabTerminarz.UseVisualStyleBackColor = true;
             // 
-            // dGVZlecenie
+            // tabPage1
             // 
-            this.dGVZlecenie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVZlecenie.Location = new System.Drawing.Point(6, 6);
-            this.dGVZlecenie.Name = "dGVZlecenie";
-            this.dGVZlecenie.Size = new System.Drawing.Size(519, 350);
-            this.dGVZlecenie.TabIndex = 0;
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(815, 362);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Pracownicy";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // bDodajZLecenie
+            // tabPage2
             // 
-            this.bDodajZLecenie.Location = new System.Drawing.Point(537, 6);
-            this.bDodajZLecenie.Name = "bDodajZLecenie";
-            this.bDodajZLecenie.Size = new System.Drawing.Size(142, 23);
-            this.bDodajZLecenie.TabIndex = 1;
-            this.bDodajZLecenie.Text = "Dodaj Zlecenie";
-            this.bDodajZLecenie.UseVisualStyleBackColor = true;
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(815, 362);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "Kontrahenci ";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // bPokazZadania
+            // tabPage3
             // 
-            this.bPokazZadania.Location = new System.Drawing.Point(537, 56);
-            this.bPokazZadania.Name = "bPokazZadania";
-            this.bPokazZadania.Size = new System.Drawing.Size(142, 23);
-            this.bPokazZadania.TabIndex = 2;
-            this.bPokazZadania.Text = "Pokaz Zadania";
-            this.bPokazZadania.UseVisualStyleBackColor = true;
+            this.tabPage3.Controls.Add(this.textBox2);
+            this.tabPage3.Controls.Add(this.label2);
+            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.label1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(815, 362);
+            this.tabPage3.TabIndex = 5;
+            this.tabPage3.Text = "Zleceniodawcy";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // label1
             // 
-            this.button3.Location = new System.Drawing.Point(609, 105);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.label1.Location = new System.Drawing.Point(603, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
-            // dataGridView1
+            // textBox1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(630, 349);
-            this.dataGridView1.TabIndex = 0;
+            this.textBox1.Location = new System.Drawing.Point(603, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
             // 
-            // butDodajPrzedmiot
+            // textBox2
             // 
-            this.butDodajPrzedmiot.Location = new System.Drawing.Point(655, 7);
-            this.butDodajPrzedmiot.Name = "butDodajPrzedmiot";
-            this.butDodajPrzedmiot.Size = new System.Drawing.Size(154, 23);
-            this.butDodajPrzedmiot.TabIndex = 1;
-            this.butDodajPrzedmiot.Text = "Dodaj Przedmiot";
-            this.butDodajPrzedmiot.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(709, 38);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 3;
             // 
-            // butUsunPrzedmiot
+            // label2
             // 
-            this.butUsunPrzedmiot.Location = new System.Drawing.Point(655, 36);
-            this.butUsunPrzedmiot.Name = "butUsunPrzedmiot";
-            this.butUsunPrzedmiot.Size = new System.Drawing.Size(154, 23);
-            this.butUsunPrzedmiot.TabIndex = 2;
-            this.butUsunPrzedmiot.Text = "Usuń Przedmiot";
-            this.butUsunPrzedmiot.UseVisualStyleBackColor = true;
+            this.label2.Location = new System.Drawing.Point(709, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "label2";
             // 
-            // butSzukajPrzedmiot
-            // 
-            this.butSzukajPrzedmiot.Location = new System.Drawing.Point(655, 65);
-            this.butSzukajPrzedmiot.Name = "butSzukajPrzedmiot";
-            this.butSzukajPrzedmiot.Size = new System.Drawing.Size(154, 23);
-            this.butSzukajPrzedmiot.TabIndex = 3;
-            this.butSzukajPrzedmiot.Text = "Szukaj Przedmiot";
-            this.butSzukajPrzedmiot.UseVisualStyleBackColor = true;
-            // 
-            // monthCalendarZlecenie
-            // 
-            this.monthCalendarZlecenie.Location = new System.Drawing.Point(537, 194);
-            this.monthCalendarZlecenie.Name = "monthCalendarZlecenie";
-            this.monthCalendarZlecenie.TabIndex = 4;
-            // 
-            // FormaGlowna
+            // FormGlowna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -449,15 +524,17 @@
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FormaGlowna";
+            this.Name = "FormGlowna";
             this.Text = "Aplikacja do zarządzania Zleceniami";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabMain.ResumeLayout(false);
             this.tabZlecenia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVZlecenie)).EndInit();
             this.tabMagazyn.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dGVZlecenie)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVMagazyn)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,16 +575,23 @@
         private System.Windows.Forms.TabControl tabMain;
         private System.Windows.Forms.TabPage tabZlecenia;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button bPokazZadania;
-        private System.Windows.Forms.Button bDodajZLecenie;
-        private System.Windows.Forms.DataGridView dGVZlecenie;
+        private System.Windows.Forms.Button butFGlownaPokazZadania;
+        private System.Windows.Forms.Button butFGlownaDodajZLecenie;
+        private System.Windows.Forms.DataGridView dataGVZlecenie;
         private System.Windows.Forms.TabPage tabMagazyn;
         private System.Windows.Forms.TabPage tabTerminarz;
         private System.Windows.Forms.MonthCalendar monthCalendarZlecenie;
-        private System.Windows.Forms.Button butSzukajPrzedmiot;
-        private System.Windows.Forms.Button butUsunPrzedmiot;
-        private System.Windows.Forms.Button butDodajPrzedmiot;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button butFGlownaSzukajPrzedmiot;
+        private System.Windows.Forms.Button butFGlownaUsunPrzedmiot;
+        private System.Windows.Forms.Button butFGlownaDodajPrzedmiot;
+        private System.Windows.Forms.DataGridView dataGVMagazyn;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
