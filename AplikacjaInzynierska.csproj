@@ -51,17 +51,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatadoINZDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormDodajPracownika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajPracownika.Designer.cs">
+      <DependentUpon>FormDodajPracownika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajPrzedmiot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajPrzedmiot.Designer.cs">
+      <DependentUpon>FormDodajPrzedmiot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajZleceniodawce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajZleceniodawce.Designer.cs">
+      <DependentUpon>FormDodajZleceniodawce.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGlowna.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormGlowna.Designer.cs">
       <DependentUpon>FormGlowna.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDodajZlecenie.cs">
+    <Compile Include="FormDodajKontahenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDodajZlecenie.Designer.cs">
-      <DependentUpon>FormDodajZlecenie.cs</DependentUpon>
+    <Compile Include="FormDodajKontahenta.Designer.cs">
+      <DependentUpon>FormDodajKontahenta.cs</DependentUpon>
     </Compile>
     <Compile Include="FormZadania.cs">
       <SubType>Form</SubType>
@@ -71,11 +89,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormDodajPracownika.resx">
+      <DependentUpon>FormDodajPracownika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajPrzedmiot.resx">
+      <DependentUpon>FormDodajPrzedmiot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajZleceniodawce.resx">
+      <DependentUpon>FormDodajZleceniodawce.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGlowna.resx">
       <DependentUpon>FormGlowna.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDodajZlecenie.resx">
-      <DependentUpon>FormDodajZlecenie.cs</DependentUpon>
+    <EmbeddedResource Include="FormDodajKontahenta.resx">
+      <DependentUpon>FormDodajKontahenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormZadania.resx">
       <DependentUpon>FormZadania.cs</DependentUpon>
