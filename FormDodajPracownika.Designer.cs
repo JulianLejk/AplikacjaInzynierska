@@ -106,6 +106,7 @@
             this.Controls.Add(this.textBoxFDPNazwisko);
             this.Controls.Add(this.textBoxFDPImie);
             this.Name = "FormDodajPracownika";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormDodajPracownika";
             this.ResumeLayout(false);
             this.PerformLayout();

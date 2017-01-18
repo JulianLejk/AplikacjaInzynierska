@@ -187,6 +187,7 @@
             this.Controls.Add(this.textBoxFDKNazwiskoKontahenta);
             this.Controls.Add(this.textBoxFDKImieKontrahenta);
             this.Name = "FormDodajKontrahenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dodaj Kontahenta";
             ((System.ComponentModel.ISupportInitialize)(this.datadoINZDataSet1)).EndInit();
             this.ResumeLayout(false);

@@ -180,6 +180,7 @@
             this.Controls.Add(this.textBoxFDKNazwiskoZleceniodawcy);
             this.Controls.Add(this.textBoxFDKImieZleceniodawcy);
             this.Name = "FormDodajZleceniodawce";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dodaj Zleceniodawce";
             this.ResumeLayout(false);
             this.PerformLayout();

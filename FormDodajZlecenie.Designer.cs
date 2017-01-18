@@ -95,6 +95,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "FormDodajZlecenie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormDodajZlecenie";
             this.ResumeLayout(false);
             this.PerformLayout();

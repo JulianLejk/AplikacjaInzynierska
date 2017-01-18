@@ -80,6 +80,7 @@
             this.Controls.Add(this.butFZadaniaDodaj);
             this.Controls.Add(this.dataGVZadanie);
             this.Name = "FormZadania";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Zadania";
             ((System.ComponentModel.ISupportInitialize)(this.dataGVZadanie)).EndInit();
             this.ResumeLayout(false);

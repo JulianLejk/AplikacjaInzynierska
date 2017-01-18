@@ -93,6 +93,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "FormDodajPrzedmiot";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dodaj Przedmiot";
             this.ResumeLayout(false);
             this.PerformLayout();

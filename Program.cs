@@ -16,7 +16,7 @@ namespace AplikacjaInzynierska
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDodajPracownika());
+            Application.Run(new FormGlowna());
         }
     }
 }
