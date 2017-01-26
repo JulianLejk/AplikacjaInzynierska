@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModelKontPracZlecenie.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Kontrahent_Zleceniodawca">
+    <Key>
+      <PropertyRef Name="ID_KZ" />
+    </Key>
+    <Property Name="ID_KZ" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Czy kontrahent" Type="bit" Nullable="false" />
+    <Property Name="Imie_KZ" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Nazwisko_KZ" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="NazwaFirmy" Type="char" MaxLength="40" Nullable="false" />
+    <Property Name="NIP" Type="numeric" Precision="14" Scale="0" Nullable="false" />
+    <Property Name="REGON" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Numer_Telefonu" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Adres_Email" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Pracownik">
+    <Key>
+      <PropertyRef Name="ID_Pracownika" />
+    </Key>
+    <Property Name="ID_Pracownika" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Czy nasz" Type="bit" Nullable="false" />
+    <Property Name="Imie_Pracownika" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nazwisko_Pracownika" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Stawka/h" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zlecenie">
+    <Key>
+      <PropertyRef Name="ID_Zlecenia" />
+    </Key>
+    <Property Name="ID_KZ" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="ID_Zlecenia" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Pracownika" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="Nazwa_Zlecenia" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Data_Rozpoczecia" Type="date" />
+    <Property Name="Data_Zakonczenia" Type="date" />
+  </EntityType>
+  <Association Name="FK_ZLECENIE_PRACOWNIK_PRACOWNI">
+    <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="1" />
+    <End Role="Zlecenie" Type="Self.Zlecenie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pracownik">
+        <PropertyRef Name="ID_Pracownika" />
+      </Principal>
+      <Dependent Role="Zlecenie">
+        <PropertyRef Name="ID_Pracownika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZLECENIE_ZLECENIE _KONTRAHE">
+    <End Role="Kontrahent_Zleceniodawca" Type="Self.Kontrahent_Zleceniodawca" Multiplicity="1" />
+    <End Role="Zlecenie" Type="Self.Zlecenie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kontrahent_Zleceniodawca">
+        <PropertyRef Name="ID_KZ" />
+      </Principal>
+      <Dependent Role="Zlecenie">
+        <PropertyRef Name="ID_KZ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DataModelKontPracZlecenieStoreContainer">
+    <EntitySet Name="Kontrahent_Zleceniodawca" EntityType="Self.Kontrahent_Zleceniodawca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pracownik" EntityType="Self.Pracownik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zlecenie" EntityType="Self.Zlecenie" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ZLECENIE_PRACOWNIK_PRACOWNI" Association="Self.FK_ZLECENIE_PRACOWNIK_PRACOWNI">
+      <End Role="Pracownik" EntitySet="Pracownik" />
+      <End Role="Zlecenie" EntitySet="Zlecenie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZLECENIE_ZLECENIE _KONTRAHE" Association="Self.FK_ZLECENIE_ZLECENIE _KONTRAHE">
+      <End Role="Kontrahent_Zleceniodawca" EntitySet="Kontrahent_Zleceniodawca" />
+      <End Role="Zlecenie" EntitySet="Zlecenie" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

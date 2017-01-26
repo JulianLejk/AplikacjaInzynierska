@@ -67,16 +67,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonFGUsunKontahenta = new System.Windows.Forms.Button();
             this.buttonFGDodajKontrahenta = new System.Windows.Forms.Button();
-            this.dataGridViewZleceniodawca = new System.Windows.Forms.DataGridView();
+            this.dataGridViewZleceniobiorca = new System.Windows.Forms.DataGridView();
             this.tabMagazyn = new System.Windows.Forms.TabPage();
             this.butFGlownaSzukajPrzedmiot = new System.Windows.Forms.Button();
             this.butFGlownaUsunPrzedmiot = new System.Windows.Forms.Button();
             this.butFGlownaDodajPrzedmiot = new System.Windows.Forms.Button();
             this.dataMagazyn = new System.Windows.Forms.DataGridView();
-            this.nazwaPrzedmiotuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.iloscPrzedmiotuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cenaPrzedmiotuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cennikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datadoINZDataSet = new AplikacjaInzynierska.DatadoINZDataSet();
             this.tabZlecenia = new System.Windows.Forms.TabPage();
@@ -90,10 +86,6 @@
             this.buttonFGUsunPracownika = new System.Windows.Forms.Button();
             this.buttonFGDodajPracownika = new System.Windows.Forms.Button();
             this.dataGridViewPracownicy = new System.Windows.Forms.DataGridView();
-            this.imiePracownikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwiskoPracownikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stawkahDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.czyNaszDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pracownikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cennikTableAdapter = new AplikacjaInzynierska.DatadoINZDataSetTableAdapters.CennikTableAdapter();
             this.pracownikTableAdapter = new AplikacjaInzynierska.DatadoINZDataSetTableAdapters.PracownikTableAdapter();
@@ -101,13 +93,21 @@
             this.kontrahent_ZleceniodawcaTableAdapter = new AplikacjaInzynierska.DatadoINZDataSetTableAdapters.Kontrahent_ZleceniodawcaTableAdapter();
             this.zlecenieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zlecenieTableAdapter = new AplikacjaInzynierska.DatadoINZDataSetTableAdapters.ZlecenieTableAdapter();
-            this.datadoINZDataSet1 = new AplikacjaInzynierska.DatadoINZDataSet1();
+            this.datadoINZDataSet1 = new AplikacjaInzynierska.DatadoINZDataSet();
             this.datadoINZDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datadoINZDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nazwaPrzedmiotuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iloscPrzedmiotuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cenaPrzedmiotuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imiePracownikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwiskoPracownikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stawkahDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.czyNaszDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZleceniodawcy)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZleceniodawca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZleceniobiorca)).BeginInit();
             this.tabMagazyn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataMagazyn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cennikBindingSource)).BeginInit();
@@ -122,6 +122,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.zlecenieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datadoINZDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datadoINZDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datadoINZDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -367,14 +368,14 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(815, 362);
+            this.tabPage3.Size = new System.Drawing.Size(840, 362);
             this.tabPage3.TabIndex = 5;
             this.tabPage3.Text = "Zleceniodawcy";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // buttonFGUsunZleceniodawce
             // 
-            this.buttonFGUsunZleceniodawce.Location = new System.Drawing.Point(558, 45);
+            this.buttonFGUsunZleceniodawce.Location = new System.Drawing.Point(162, 333);
             this.buttonFGUsunZleceniodawce.Name = "buttonFGUsunZleceniodawce";
             this.buttonFGUsunZleceniodawce.Size = new System.Drawing.Size(150, 23);
             this.buttonFGUsunZleceniodawce.TabIndex = 2;
@@ -384,14 +385,15 @@
             // dataGridViewZleceniodawcy
             // 
             this.dataGridViewZleceniodawcy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewZleceniodawcy.Location = new System.Drawing.Point(7, 7);
+            this.dataGridViewZleceniodawcy.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewZleceniodawcy.Name = "dataGridViewZleceniodawcy";
-            this.dataGridViewZleceniodawcy.Size = new System.Drawing.Size(545, 349);
+            this.dataGridViewZleceniodawcy.ReadOnly = true;
+            this.dataGridViewZleceniodawcy.Size = new System.Drawing.Size(834, 320);
             this.dataGridViewZleceniodawcy.TabIndex = 1;
             // 
             // buttonFGDodajZleceniodawce
             // 
-            this.buttonFGDodajZleceniodawce.Location = new System.Drawing.Point(558, 7);
+            this.buttonFGDodajZleceniodawce.Location = new System.Drawing.Point(6, 333);
             this.buttonFGDodajZleceniodawce.Name = "buttonFGDodajZleceniodawce";
             this.buttonFGDodajZleceniodawce.Size = new System.Drawing.Size(150, 23);
             this.buttonFGDodajZleceniodawce.TabIndex = 0;
@@ -403,18 +405,18 @@
             // 
             this.tabPage2.Controls.Add(this.buttonFGUsunKontahenta);
             this.tabPage2.Controls.Add(this.buttonFGDodajKontrahenta);
-            this.tabPage2.Controls.Add(this.dataGridViewZleceniodawca);
+            this.tabPage2.Controls.Add(this.dataGridViewZleceniobiorca);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(815, 362);
+            this.tabPage2.Size = new System.Drawing.Size(840, 362);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Kontrahenci ";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // buttonFGUsunKontahenta
             // 
-            this.buttonFGUsunKontahenta.Location = new System.Drawing.Point(568, 47);
+            this.buttonFGUsunKontahenta.Location = new System.Drawing.Point(150, 333);
             this.buttonFGUsunKontahenta.Name = "buttonFGUsunKontahenta";
             this.buttonFGUsunKontahenta.Size = new System.Drawing.Size(138, 23);
             this.buttonFGUsunKontahenta.TabIndex = 2;
@@ -423,7 +425,7 @@
             // 
             // buttonFGDodajKontrahenta
             // 
-            this.buttonFGDodajKontrahenta.Location = new System.Drawing.Point(568, 7);
+            this.buttonFGDodajKontrahenta.Location = new System.Drawing.Point(6, 333);
             this.buttonFGDodajKontrahenta.Name = "buttonFGDodajKontrahenta";
             this.buttonFGDodajKontrahenta.Size = new System.Drawing.Size(138, 23);
             this.buttonFGDodajKontrahenta.TabIndex = 1;
@@ -431,14 +433,15 @@
             this.buttonFGDodajKontrahenta.UseVisualStyleBackColor = true;
             this.buttonFGDodajKontrahenta.Click += new System.EventHandler(this.buttonFGDodajKontrahenta_Click);
             // 
-            // dataGridViewZleceniodawca
+            // dataGridViewZleceniobiorca
             // 
-            this.dataGridViewZleceniodawca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewZleceniodawca.Location = new System.Drawing.Point(7, 7);
-            this.dataGridViewZleceniodawca.Name = "dataGridViewZleceniodawca";
-            this.dataGridViewZleceniodawca.ReadOnly = true;
-            this.dataGridViewZleceniodawca.Size = new System.Drawing.Size(554, 349);
-            this.dataGridViewZleceniodawca.TabIndex = 0;
+            this.dataGridViewZleceniobiorca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewZleceniobiorca.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridViewZleceniobiorca.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewZleceniobiorca.Name = "dataGridViewZleceniobiorca";
+            this.dataGridViewZleceniobiorca.ReadOnly = true;
+            this.dataGridViewZleceniobiorca.Size = new System.Drawing.Size(834, 324);
+            this.dataGridViewZleceniobiorca.TabIndex = 0;
             // 
             // tabMagazyn
             // 
@@ -449,14 +452,14 @@
             this.tabMagazyn.Location = new System.Drawing.Point(4, 22);
             this.tabMagazyn.Name = "tabMagazyn";
             this.tabMagazyn.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMagazyn.Size = new System.Drawing.Size(815, 362);
+            this.tabMagazyn.Size = new System.Drawing.Size(840, 362);
             this.tabMagazyn.TabIndex = 1;
             this.tabMagazyn.Text = "Magazyn";
             this.tabMagazyn.UseVisualStyleBackColor = true;
             // 
             // butFGlownaSzukajPrzedmiot
             // 
-            this.butFGlownaSzukajPrzedmiot.Location = new System.Drawing.Point(655, 65);
+            this.butFGlownaSzukajPrzedmiot.Location = new System.Drawing.Point(327, 333);
             this.butFGlownaSzukajPrzedmiot.Name = "butFGlownaSzukajPrzedmiot";
             this.butFGlownaSzukajPrzedmiot.Size = new System.Drawing.Size(154, 23);
             this.butFGlownaSzukajPrzedmiot.TabIndex = 3;
@@ -465,7 +468,7 @@
             // 
             // butFGlownaUsunPrzedmiot
             // 
-            this.butFGlownaUsunPrzedmiot.Location = new System.Drawing.Point(655, 36);
+            this.butFGlownaUsunPrzedmiot.Location = new System.Drawing.Point(167, 333);
             this.butFGlownaUsunPrzedmiot.Name = "butFGlownaUsunPrzedmiot";
             this.butFGlownaUsunPrzedmiot.Size = new System.Drawing.Size(154, 23);
             this.butFGlownaUsunPrzedmiot.TabIndex = 2;
@@ -474,7 +477,7 @@
             // 
             // butFGlownaDodajPrzedmiot
             // 
-            this.butFGlownaDodajPrzedmiot.Location = new System.Drawing.Point(655, 7);
+            this.butFGlownaDodajPrzedmiot.Location = new System.Drawing.Point(7, 333);
             this.butFGlownaDodajPrzedmiot.Name = "butFGlownaDodajPrzedmiot";
             this.butFGlownaDodajPrzedmiot.Size = new System.Drawing.Size(154, 23);
             this.butFGlownaDodajPrzedmiot.TabIndex = 1;
@@ -488,42 +491,15 @@
             this.dataMagazyn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataMagazyn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nazwaPrzedmiotuDataGridViewTextBoxColumn,
-            this.Column1,
             this.iloscPrzedmiotuDataGridViewTextBoxColumn,
             this.cenaPrzedmiotuDataGridViewTextBoxColumn});
             this.dataMagazyn.DataSource = this.cennikBindingSource;
-            this.dataMagazyn.Location = new System.Drawing.Point(7, 7);
+            this.dataMagazyn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataMagazyn.Location = new System.Drawing.Point(3, 3);
             this.dataMagazyn.Name = "dataMagazyn";
             this.dataMagazyn.ReadOnly = true;
-            this.dataMagazyn.Size = new System.Drawing.Size(630, 349);
+            this.dataMagazyn.Size = new System.Drawing.Size(834, 322);
             this.dataMagazyn.TabIndex = 0;
-            // 
-            // nazwaPrzedmiotuDataGridViewTextBoxColumn
-            // 
-            this.nazwaPrzedmiotuDataGridViewTextBoxColumn.DataPropertyName = "Nazwa_Przedmiotu";
-            this.nazwaPrzedmiotuDataGridViewTextBoxColumn.HeaderText = "Nazwa_Przedmiotu";
-            this.nazwaPrzedmiotuDataGridViewTextBoxColumn.Name = "nazwaPrzedmiotuDataGridViewTextBoxColumn";
-            this.nazwaPrzedmiotuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Czy nasze?";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // iloscPrzedmiotuDataGridViewTextBoxColumn
-            // 
-            this.iloscPrzedmiotuDataGridViewTextBoxColumn.DataPropertyName = "Ilosc_Przedmiotu";
-            this.iloscPrzedmiotuDataGridViewTextBoxColumn.HeaderText = "Ilosc_Przedmiotu";
-            this.iloscPrzedmiotuDataGridViewTextBoxColumn.Name = "iloscPrzedmiotuDataGridViewTextBoxColumn";
-            this.iloscPrzedmiotuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cenaPrzedmiotuDataGridViewTextBoxColumn
-            // 
-            this.cenaPrzedmiotuDataGridViewTextBoxColumn.DataPropertyName = "Cena_Przedmiotu";
-            this.cenaPrzedmiotuDataGridViewTextBoxColumn.HeaderText = "Cena_Przedmiotu";
-            this.cenaPrzedmiotuDataGridViewTextBoxColumn.Name = "cenaPrzedmiotuDataGridViewTextBoxColumn";
-            this.cenaPrzedmiotuDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cennikBindingSource
             // 
@@ -545,14 +521,14 @@
             this.tabZlecenia.Location = new System.Drawing.Point(4, 22);
             this.tabZlecenia.Name = "tabZlecenia";
             this.tabZlecenia.Padding = new System.Windows.Forms.Padding(3);
-            this.tabZlecenia.Size = new System.Drawing.Size(815, 362);
+            this.tabZlecenia.Size = new System.Drawing.Size(840, 362);
             this.tabZlecenia.TabIndex = 0;
             this.tabZlecenia.Text = "Zlecenia";
             this.tabZlecenia.UseVisualStyleBackColor = true;
             // 
             // monthCalendarZlecenie
             // 
-            this.monthCalendarZlecenie.Location = new System.Drawing.Point(537, 194);
+            this.monthCalendarZlecenie.Location = new System.Drawing.Point(551, 197);
             this.monthCalendarZlecenie.Name = "monthCalendarZlecenie";
             this.monthCalendarZlecenie.TabIndex = 4;
             // 
@@ -567,7 +543,7 @@
             // 
             // butFGlownaPokazZadania
             // 
-            this.butFGlownaPokazZadania.Location = new System.Drawing.Point(537, 35);
+            this.butFGlownaPokazZadania.Location = new System.Drawing.Point(545, 35);
             this.butFGlownaPokazZadania.Name = "butFGlownaPokazZadania";
             this.butFGlownaPokazZadania.Size = new System.Drawing.Size(142, 23);
             this.butFGlownaPokazZadania.TabIndex = 2;
@@ -577,7 +553,7 @@
             // 
             // butFGlownaDodajZLecenie
             // 
-            this.butFGlownaDodajZLecenie.Location = new System.Drawing.Point(537, 6);
+            this.butFGlownaDodajZLecenie.Location = new System.Drawing.Point(545, 6);
             this.butFGlownaDodajZLecenie.Name = "butFGlownaDodajZLecenie";
             this.butFGlownaDodajZLecenie.Size = new System.Drawing.Size(142, 23);
             this.butFGlownaDodajZLecenie.TabIndex = 1;
@@ -588,10 +564,10 @@
             // dataZlecenia
             // 
             this.dataZlecenia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataZlecenia.Location = new System.Drawing.Point(6, 6);
+            this.dataZlecenia.Location = new System.Drawing.Point(12, 9);
             this.dataZlecenia.Name = "dataZlecenia";
             this.dataZlecenia.ReadOnly = true;
-            this.dataZlecenia.Size = new System.Drawing.Size(519, 350);
+            this.dataZlecenia.Size = new System.Drawing.Size(527, 350);
             this.dataZlecenia.TabIndex = 0;
             // 
             // tabMain
@@ -601,10 +577,11 @@
             this.tabMain.Controls.Add(this.tabPage2);
             this.tabMain.Controls.Add(this.tabPage3);
             this.tabMain.Controls.Add(this.tabPage1);
-            this.tabMain.Location = new System.Drawing.Point(13, 28);
+            this.tabMain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabMain.Location = new System.Drawing.Point(0, 24);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(823, 388);
+            this.tabMain.Size = new System.Drawing.Size(848, 388);
             this.tabMain.TabIndex = 1;
             // 
             // tabPage1
@@ -615,14 +592,14 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(815, 362);
+            this.tabPage1.Size = new System.Drawing.Size(840, 362);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "Pracownicy";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // buttonFGUsunPracownika
             // 
-            this.buttonFGUsunPracownika.Location = new System.Drawing.Point(541, 36);
+            this.buttonFGUsunPracownika.Location = new System.Drawing.Point(178, 333);
             this.buttonFGUsunPracownika.Name = "buttonFGUsunPracownika";
             this.buttonFGUsunPracownika.Size = new System.Drawing.Size(166, 23);
             this.buttonFGUsunPracownika.TabIndex = 2;
@@ -631,7 +608,7 @@
             // 
             // buttonFGDodajPracownika
             // 
-            this.buttonFGDodajPracownika.Location = new System.Drawing.Point(541, 7);
+            this.buttonFGDodajPracownika.Location = new System.Drawing.Point(6, 333);
             this.buttonFGDodajPracownika.Name = "buttonFGDodajPracownika";
             this.buttonFGDodajPracownika.Size = new System.Drawing.Size(166, 23);
             this.buttonFGDodajPracownika.TabIndex = 1;
@@ -649,42 +626,15 @@
             this.stawkahDataGridViewTextBoxColumn,
             this.czyNaszDataGridViewCheckBoxColumn});
             this.dataGridViewPracownicy.DataSource = this.pracownikBindingSource;
-            this.dataGridViewPracownicy.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dataGridViewPracownicy.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewPracownicy.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridViewPracownicy.Enabled = false;
             this.dataGridViewPracownicy.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewPracownicy.MultiSelect = false;
             this.dataGridViewPracownicy.Name = "dataGridViewPracownicy";
             this.dataGridViewPracownicy.ReadOnly = true;
-            this.dataGridViewPracownicy.Size = new System.Drawing.Size(443, 356);
+            this.dataGridViewPracownicy.Size = new System.Drawing.Size(834, 324);
             this.dataGridViewPracownicy.TabIndex = 0;
-            // 
-            // imiePracownikaDataGridViewTextBoxColumn
-            // 
-            this.imiePracownikaDataGridViewTextBoxColumn.DataPropertyName = "Imie_Pracownika";
-            this.imiePracownikaDataGridViewTextBoxColumn.HeaderText = "Imie_Pracownika";
-            this.imiePracownikaDataGridViewTextBoxColumn.Name = "imiePracownikaDataGridViewTextBoxColumn";
-            this.imiePracownikaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nazwiskoPracownikaDataGridViewTextBoxColumn
-            // 
-            this.nazwiskoPracownikaDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko_Pracownika";
-            this.nazwiskoPracownikaDataGridViewTextBoxColumn.HeaderText = "Nazwisko_Pracownika";
-            this.nazwiskoPracownikaDataGridViewTextBoxColumn.Name = "nazwiskoPracownikaDataGridViewTextBoxColumn";
-            this.nazwiskoPracownikaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stawkahDataGridViewTextBoxColumn
-            // 
-            this.stawkahDataGridViewTextBoxColumn.DataPropertyName = "Stawka/h";
-            this.stawkahDataGridViewTextBoxColumn.HeaderText = "Stawka/h";
-            this.stawkahDataGridViewTextBoxColumn.Name = "stawkahDataGridViewTextBoxColumn";
-            this.stawkahDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // czyNaszDataGridViewCheckBoxColumn
-            // 
-            this.czyNaszDataGridViewCheckBoxColumn.DataPropertyName = "Czy nasz";
-            this.czyNaszDataGridViewCheckBoxColumn.HeaderText = "Czy nasz";
-            this.czyNaszDataGridViewCheckBoxColumn.Name = "czyNaszDataGridViewCheckBoxColumn";
-            this.czyNaszDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // pracownikBindingSource
             // 
@@ -727,6 +677,64 @@
             this.datadoINZDataSet1BindingSource.DataSource = this.datadoINZDataSet1;
             this.datadoINZDataSet1BindingSource.Position = 0;
             // 
+            // datadoINZDataSetBindingSource
+            // 
+            this.datadoINZDataSetBindingSource.DataSource = this.datadoINZDataSet;
+            this.datadoINZDataSetBindingSource.Position = 0;
+            // 
+            // nazwaPrzedmiotuDataGridViewTextBoxColumn
+            // 
+            this.nazwaPrzedmiotuDataGridViewTextBoxColumn.DataPropertyName = "Nazwa_Przedmiotu";
+            this.nazwaPrzedmiotuDataGridViewTextBoxColumn.HeaderText = "Nazwa Przedmiotu";
+            this.nazwaPrzedmiotuDataGridViewTextBoxColumn.Name = "nazwaPrzedmiotuDataGridViewTextBoxColumn";
+            this.nazwaPrzedmiotuDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iloscPrzedmiotuDataGridViewTextBoxColumn
+            // 
+            this.iloscPrzedmiotuDataGridViewTextBoxColumn.DataPropertyName = "Ilosc_Przedmiotu";
+            this.iloscPrzedmiotuDataGridViewTextBoxColumn.HeaderText = "Ilość ";
+            this.iloscPrzedmiotuDataGridViewTextBoxColumn.Name = "iloscPrzedmiotuDataGridViewTextBoxColumn";
+            this.iloscPrzedmiotuDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cenaPrzedmiotuDataGridViewTextBoxColumn
+            // 
+            this.cenaPrzedmiotuDataGridViewTextBoxColumn.DataPropertyName = "Cena_Przedmiotu";
+            this.cenaPrzedmiotuDataGridViewTextBoxColumn.HeaderText = "Cena ";
+            this.cenaPrzedmiotuDataGridViewTextBoxColumn.Name = "cenaPrzedmiotuDataGridViewTextBoxColumn";
+            this.cenaPrzedmiotuDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imiePracownikaDataGridViewTextBoxColumn
+            // 
+            this.imiePracownikaDataGridViewTextBoxColumn.DataPropertyName = "Imie_Pracownika";
+            this.imiePracownikaDataGridViewTextBoxColumn.HeaderText = "Imię Pracownika";
+            this.imiePracownikaDataGridViewTextBoxColumn.Name = "imiePracownikaDataGridViewTextBoxColumn";
+            this.imiePracownikaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imiePracownikaDataGridViewTextBoxColumn.Width = 198;
+            // 
+            // nazwiskoPracownikaDataGridViewTextBoxColumn
+            // 
+            this.nazwiskoPracownikaDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko_Pracownika";
+            this.nazwiskoPracownikaDataGridViewTextBoxColumn.HeaderText = "Nazwisko Pracownika";
+            this.nazwiskoPracownikaDataGridViewTextBoxColumn.Name = "nazwiskoPracownikaDataGridViewTextBoxColumn";
+            this.nazwiskoPracownikaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nazwiskoPracownikaDataGridViewTextBoxColumn.Width = 198;
+            // 
+            // stawkahDataGridViewTextBoxColumn
+            // 
+            this.stawkahDataGridViewTextBoxColumn.DataPropertyName = "Stawka/h";
+            this.stawkahDataGridViewTextBoxColumn.HeaderText = "Stawka/h";
+            this.stawkahDataGridViewTextBoxColumn.Name = "stawkahDataGridViewTextBoxColumn";
+            this.stawkahDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stawkahDataGridViewTextBoxColumn.Width = 197;
+            // 
+            // czyNaszDataGridViewCheckBoxColumn
+            // 
+            this.czyNaszDataGridViewCheckBoxColumn.DataPropertyName = "Czy nasz";
+            this.czyNaszDataGridViewCheckBoxColumn.HeaderText = "Czy nasz";
+            this.czyNaszDataGridViewCheckBoxColumn.Name = "czyNaszDataGridViewCheckBoxColumn";
+            this.czyNaszDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.czyNaszDataGridViewCheckBoxColumn.Width = 198;
+            // 
             // FormGlowna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -744,7 +752,7 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZleceniodawcy)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZleceniodawca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZleceniobiorca)).EndInit();
             this.tabMagazyn.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataMagazyn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cennikBindingSource)).EndInit();
@@ -759,6 +767,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.zlecenieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datadoINZDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datadoINZDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datadoINZDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -803,7 +812,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button buttonFGUsunKontahenta;
         private System.Windows.Forms.Button buttonFGDodajKontrahenta;
-        private System.Windows.Forms.DataGridView dataGridViewZleceniodawca;
+        private System.Windows.Forms.DataGridView dataGridViewZleceniobiorca;
         private System.Windows.Forms.TabPage tabMagazyn;
         private System.Windows.Forms.Button butFGlownaSzukajPrzedmiot;
         private System.Windows.Forms.Button butFGlownaUsunPrzedmiot;
@@ -825,20 +834,20 @@
         private DatadoINZDataSetTableAdapters.CennikTableAdapter cennikTableAdapter;
         private System.Windows.Forms.BindingSource pracownikBindingSource;
         private DatadoINZDataSetTableAdapters.PracownikTableAdapter pracownikTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imiePracownikaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoPracownikaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stawkahDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn czyNaszDataGridViewCheckBoxColumn;
         private System.Windows.Forms.BindingSource kontrahentZleceniodawcaBindingSource;
         private DatadoINZDataSetTableAdapters.Kontrahent_ZleceniodawcaTableAdapter kontrahent_ZleceniodawcaTableAdapter;
         private System.Windows.Forms.BindingSource zlecenieBindingSource;
         private DatadoINZDataSetTableAdapters.ZlecenieTableAdapter zlecenieTableAdapter;
         private System.Windows.Forms.BindingSource datadoINZDataSet1BindingSource;
-        private DatadoINZDataSet1 datadoINZDataSet1;
+        private DatadoINZDataSet datadoINZDataSet1;
+        private System.Windows.Forms.BindingSource datadoINZDataSetBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwaPrzedmiotuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iloscPrzedmiotuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cenaPrzedmiotuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imiePracownikaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoPracownikaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stawkahDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn czyNaszDataGridViewCheckBoxColumn;
     }
 }
 

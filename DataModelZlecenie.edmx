@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DatadoINZModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Kontrahent_Zleceniodawca">
+          <Key>
+            <PropertyRef Name="ID_KZ" />
+          </Key>
+          <Property Name="ID_KZ" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Czy kontrahent" Type="bit" Nullable="false" />
+          <Property Name="Imie_KZ" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Nazwisko_KZ" Type="char" MaxLength="25" Nullable="false" />
+          <Property Name="NazwaFirmy" Type="char" MaxLength="40" Nullable="false" />
+          <Property Name="NIP" Type="numeric" Precision="14" Scale="0" Nullable="false" />
+          <Property Name="REGON" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="Numer_Telefonu" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="Adres_Email" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Pracownik">
+          <Key>
+            <PropertyRef Name="ID_Pracownika" />
+          </Key>
+          <Property Name="ID_Pracownika" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Czy nasz" Type="bit" Nullable="false" />
+          <Property Name="Imie_Pracownika" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazwisko_Pracownika" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Stawka/h" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zlecenie">
+          <Key>
+            <PropertyRef Name="ID_Zlecenia" />
+          </Key>
+          <Property Name="ID_KZ" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ID_Zlecenia" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Pracownika" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Nazwa_Zlecenia" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Data_Rozpoczecia" Type="date" />
+          <Property Name="Data_Zakonczenia" Type="date" />
+        </EntityType>
+        <Association Name="FK_ZLECENIE_PRACOWNIK_PRACOWNI">
+          <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="1" />
+          <End Role="Zlecenie" Type="Self.Zlecenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pracownik">
+              <PropertyRef Name="ID_Pracownika" />
+            </Principal>
+            <Dependent Role="Zlecenie">
+              <PropertyRef Name="ID_Pracownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZLECENIE_ZLECENIE _KONTRAHE">
+          <End Role="Kontrahent_Zleceniodawca" Type="Self.Kontrahent_Zleceniodawca" Multiplicity="1" />
+          <End Role="Zlecenie" Type="Self.Zlecenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kontrahent_Zleceniodawca">
+              <PropertyRef Name="ID_KZ" />
+            </Principal>
+            <Dependent Role="Zlecenie">
+              <PropertyRef Name="ID_KZ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="DatadoINZModelStoreContainer">
+          <EntitySet Name="Kontrahent_Zleceniodawca" EntityType="Self.Kontrahent_Zleceniodawca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pracownik" EntityType="Self.Pracownik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zlecenie" EntityType="Self.Zlecenie" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ZLECENIE_PRACOWNIK_PRACOWNI" Association="Self.FK_ZLECENIE_PRACOWNIK_PRACOWNI">
+            <End Role="Pracownik" EntitySet="Pracownik" />
+            <End Role="Zlecenie" EntitySet="Zlecenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZLECENIE_ZLECENIE _KONTRAHE" Association="Self.FK_ZLECENIE_ZLECENIE _KONTRAHE">
+            <End Role="Kontrahent_Zleceniodawca" EntitySet="Kontrahent_Zleceniodawca" />
+            <End Role="Zlecenie" EntitySet="Zlecenie" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DatadoINZModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Kontrahent_Zleceniodawca">
+          <Key>
+            <PropertyRef Name="ID_KZ" />
+          </Key>
+          <Property Name="ID_KZ" Type="Decimal" Precision="10" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Czy_kontrahent" Type="Boolean" Nullable="false" />
+          <Property Name="Imie_KZ" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Nazwisko_KZ" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="NazwaFirmy" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="NIP" Type="Decimal" Precision="14" Scale="0" Nullable="false" />
+          <Property Name="REGON" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="Numer_Telefonu" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="Adres_Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Zlecenie" Relationship="Self.FK_ZLECENIE_ZLECENIE__KONTRAHE" FromRole="Kontrahent_Zleceniodawca" ToRole="Zlecenie" />
+        </EntityType>
+        <EntityType Name="Pracownik">
+          <Key>
+            <PropertyRef Name="ID_Pracownika" />
+          </Key>
+          <Property Name="ID_Pracownika" Type="Decimal" Precision="10" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Czy_nasz" Type="Boolean" Nullable="false" />
+          <Property Name="Imie_Pracownika" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazwisko_Pracownika" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Stawka_h" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Zlecenie" Relationship="Self.FK_ZLECENIE_PRACOWNIK_PRACOWNI" FromRole="Pracownik" ToRole="Zlecenie" />
+        </EntityType>
+        <EntityType Name="Zlecenie">
+          <Key>
+            <PropertyRef Name="ID_Zlecenia" />
+          </Key>
+          <Property Name="ID_KZ" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ID_Zlecenia" Type="Decimal" Precision="10" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Pracownika" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="Nazwa_Zlecenia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Data_Rozpoczecia" Type="DateTime" Precision="0" />
+          <Property Name="Data_Zakonczenia" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Kontrahent_Zleceniodawca" Relationship="Self.FK_ZLECENIE_ZLECENIE__KONTRAHE" FromRole="Zlecenie" ToRole="Kontrahent_Zleceniodawca" />
+          <NavigationProperty Name="Pracownik" Relationship="Self.FK_ZLECENIE_PRACOWNIK_PRACOWNI" FromRole="Zlecenie" ToRole="Pracownik" />
+        </EntityType>
+        <Association Name="FK_ZLECENIE_ZLECENIE__KONTRAHE">
+          <End Role="Kontrahent_Zleceniodawca" Type="Self.Kontrahent_Zleceniodawca" Multiplicity="1" />
+          <End Role="Zlecenie" Type="Self.Zlecenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kontrahent_Zleceniodawca">
+              <PropertyRef Name="ID_KZ" />
+            </Principal>
+            <Dependent Role="Zlecenie">
+              <PropertyRef Name="ID_KZ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZLECENIE_PRACOWNIK_PRACOWNI">
+          <End Role="Pracownik" Type="Self.Pracownik" Multiplicity="1" />
+          <End Role="Zlecenie" Type="Self.Zlecenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pracownik">
+              <PropertyRef Name="ID_Pracownika" />
+            </Principal>
+            <Dependent Role="Zlecenie">
+              <PropertyRef Name="ID_Pracownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DatadoINZEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Kontrahent_Zleceniodawca" EntityType="Self.Kontrahent_Zleceniodawca" />
+          <EntitySet Name="Pracownik" EntityType="Self.Pracownik" />
+          <EntitySet Name="Zlecenie" EntityType="Self.Zlecenie" />
+          <AssociationSet Name="FK_ZLECENIE_ZLECENIE__KONTRAHE" Association="Self.FK_ZLECENIE_ZLECENIE__KONTRAHE">
+            <End Role="Kontrahent_Zleceniodawca" EntitySet="Kontrahent_Zleceniodawca" />
+            <End Role="Zlecenie" EntitySet="Zlecenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZLECENIE_PRACOWNIK_PRACOWNI" Association="Self.FK_ZLECENIE_PRACOWNIK_PRACOWNI">
+            <End Role="Pracownik" EntitySet="Pracownik" />
+            <End Role="Zlecenie" EntitySet="Zlecenie" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DatadoINZModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DatadoINZModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DatadoINZModelStoreContainer" CdmEntityContainer="DatadoINZEntities1">
+          <EntitySetMapping Name="Kontrahent_Zleceniodawca">
+            <EntityTypeMapping TypeName="DatadoINZModel.Kontrahent_Zleceniodawca">
+              <MappingFragment StoreEntitySet="Kontrahent_Zleceniodawca">
+                <ScalarProperty Name="ID_KZ" ColumnName="ID_KZ" />
+                <ScalarProperty Name="Czy_kontrahent" ColumnName="Czy kontrahent" />
+                <ScalarProperty Name="Imie_KZ" ColumnName="Imie_KZ" />
+                <ScalarProperty Name="Nazwisko_KZ" ColumnName="Nazwisko_KZ" />
+                <ScalarProperty Name="NazwaFirmy" ColumnName="NazwaFirmy" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="REGON" ColumnName="REGON" />
+                <ScalarProperty Name="Numer_Telefonu" ColumnName="Numer_Telefonu" />
+                <ScalarProperty Name="Adres_Email" ColumnName="Adres_Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pracownik">
+            <EntityTypeMapping TypeName="DatadoINZModel.Pracownik">
+              <MappingFragment StoreEntitySet="Pracownik">
+                <ScalarProperty Name="ID_Pracownika" ColumnName="ID_Pracownika" />
+                <ScalarProperty Name="Czy_nasz" ColumnName="Czy nasz" />
+                <ScalarProperty Name="Imie_Pracownika" ColumnName="Imie_Pracownika" />
+                <ScalarProperty Name="Nazwisko_Pracownika" ColumnName="Nazwisko_Pracownika" />
+                <ScalarProperty Name="Stawka_h" ColumnName="Stawka/h" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zlecenie">
+            <EntityTypeMapping TypeName="DatadoINZModel.Zlecenie">
+              <MappingFragment StoreEntitySet="Zlecenie">
+                <ScalarProperty Name="ID_KZ" ColumnName="ID_KZ" />
+                <ScalarProperty Name="ID_Zlecenia" ColumnName="ID_Zlecenia" />
+                <ScalarProperty Name="ID_Pracownika" ColumnName="ID_Pracownika" />
+                <ScalarProperty Name="Nazwa_Zlecenia" ColumnName="Nazwa_Zlecenia" />
+                <ScalarProperty Name="Data_Rozpoczecia" ColumnName="Data_Rozpoczecia" />
+                <ScalarProperty Name="Data_Zakonczenia" ColumnName="Data_Zakonczenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DatadoINZModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DatadoINZModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DatadoINZModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DatadoINZModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DatadoINZModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DatadoINZModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DatadoINZModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DatadoINZModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DatadoINZModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
