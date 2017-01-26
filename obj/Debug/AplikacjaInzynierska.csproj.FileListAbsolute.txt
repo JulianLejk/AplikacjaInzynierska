@@ -15,5 +15,3 @@ C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\Aplik
 C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormDodajZadanie.resources
 C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormDodajZlecenie.resources
 C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormPokazZadania.resources
-C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\bin\Debug\EntityFramework.dll
-C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\bin\Debug\EntityFramework.xml

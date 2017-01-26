@@ -20,19 +20,25 @@ namespace AplikacjaInzynierska {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DatadoINZKontrahenci_Pracownik")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DatadoINZDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DatadoINZKontrahenci_Pracownik : global::System.Data.DataSet {
+    public partial class DatadoINZDataSet1 : global::System.Data.DataSet {
         
         private Kontrahent_ZleceniodawcaDataTable tableKontrahent_Zleceniodawca;
         
         private PracownikDataTable tablePracownik;
         
+        private ZlecenieDataTable tableZlecenie;
+        
+        private global::System.Data.DataRelation relationFK_ZLECENIE_PRACOWNIK_PRACOWNI;
+        
+        private global::System.Data.DataRelation relationFK_ZLECENIE_ZLECENIE__KONTRAHE;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DatadoINZKontrahenci_Pracownik() {
+        public DatadoINZDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +49,7 @@ namespace AplikacjaInzynierska {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DatadoINZKontrahenci_Pracownik(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DatadoINZDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -61,6 +67,9 @@ namespace AplikacjaInzynierska {
                 }
                 if ((ds.Tables["Pracownik"] != null)) {
                     base.Tables.Add(new PracownikDataTable(ds.Tables["Pracownik"]));
+                }
+                if ((ds.Tables["Zlecenie"] != null)) {
+                    base.Tables.Add(new ZlecenieDataTable(ds.Tables["Zlecenie"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -97,6 +106,16 @@ namespace AplikacjaInzynierska {
         public PracownikDataTable Pracownik {
             get {
                 return this.tablePracownik;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ZlecenieDataTable Zlecenie {
+            get {
+                return this.tableZlecenie;
             }
         }
         
@@ -142,7 +161,7 @@ namespace AplikacjaInzynierska {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DatadoINZKontrahenci_Pracownik cln = ((DatadoINZKontrahenci_Pracownik)(base.Clone()));
+            DatadoINZDataSet1 cln = ((DatadoINZDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -172,6 +191,9 @@ namespace AplikacjaInzynierska {
                 }
                 if ((ds.Tables["Pracownik"] != null)) {
                     base.Tables.Add(new PracownikDataTable(ds.Tables["Pracownik"]));
+                }
+                if ((ds.Tables["Zlecenie"] != null)) {
+                    base.Tables.Add(new ZlecenieDataTable(ds.Tables["Zlecenie"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -218,20 +240,38 @@ namespace AplikacjaInzynierska {
                     this.tablePracownik.InitVars();
                 }
             }
+            this.tableZlecenie = ((ZlecenieDataTable)(base.Tables["Zlecenie"]));
+            if ((initTable == true)) {
+                if ((this.tableZlecenie != null)) {
+                    this.tableZlecenie.InitVars();
+                }
+            }
+            this.relationFK_ZLECENIE_PRACOWNIK_PRACOWNI = this.Relations["FK_ZLECENIE_PRACOWNIK_PRACOWNI"];
+            this.relationFK_ZLECENIE_ZLECENIE__KONTRAHE = this.Relations["FK_ZLECENIE_ZLECENIE _KONTRAHE"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DatadoINZKontrahenci_Pracownik";
+            this.DataSetName = "DatadoINZDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DatadoINZKontrahenci_Pracownik.xsd";
+            this.Namespace = "http://tempuri.org/DatadoINZDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableKontrahent_Zleceniodawca = new Kontrahent_ZleceniodawcaDataTable();
             base.Tables.Add(this.tableKontrahent_Zleceniodawca);
             this.tablePracownik = new PracownikDataTable();
             base.Tables.Add(this.tablePracownik);
+            this.tableZlecenie = new ZlecenieDataTable();
+            base.Tables.Add(this.tableZlecenie);
+            this.relationFK_ZLECENIE_PRACOWNIK_PRACOWNI = new global::System.Data.DataRelation("FK_ZLECENIE_PRACOWNIK_PRACOWNI", new global::System.Data.DataColumn[] {
+                        this.tablePracownik.ID_PracownikaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableZlecenie.ID_PracownikaColumn}, false);
+            this.Relations.Add(this.relationFK_ZLECENIE_PRACOWNIK_PRACOWNI);
+            this.relationFK_ZLECENIE_ZLECENIE__KONTRAHE = new global::System.Data.DataRelation("FK_ZLECENIE_ZLECENIE _KONTRAHE", new global::System.Data.DataColumn[] {
+                        this.tableKontrahent_Zleceniodawca.ID_KZColumn}, new global::System.Data.DataColumn[] {
+                        this.tableZlecenie.ID_KZColumn}, false);
+            this.Relations.Add(this.relationFK_ZLECENIE_ZLECENIE__KONTRAHE);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -248,6 +288,12 @@ namespace AplikacjaInzynierska {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeZlecenie() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -257,7 +303,7 @@ namespace AplikacjaInzynierska {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DatadoINZKontrahenci_Pracownik ds = new DatadoINZKontrahenci_Pracownik();
+            DatadoINZDataSet1 ds = new DatadoINZDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -306,6 +352,9 @@ namespace AplikacjaInzynierska {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void PracownikRowChangeEventHandler(object sender, PracownikRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ZlecenieRowChangeEventHandler(object sender, ZlecenieRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -633,7 +682,7 @@ namespace AplikacjaInzynierska {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatadoINZKontrahenci_Pracownik ds = new DatadoINZKontrahenci_Pracownik();
+                DatadoINZDataSet1 ds = new DatadoINZDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -959,7 +1008,7 @@ namespace AplikacjaInzynierska {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatadoINZKontrahenci_Pracownik ds = new DatadoINZKontrahenci_Pracownik();
+                DatadoINZDataSet1 ds = new DatadoINZDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -978,6 +1027,321 @@ namespace AplikacjaInzynierska {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "PracownikDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ZlecenieDataTable : global::System.Data.TypedTableBase<ZlecenieRow> {
+            
+            private global::System.Data.DataColumn columnID_KZ;
+            
+            private global::System.Data.DataColumn columnID_Zlecenia;
+            
+            private global::System.Data.DataColumn columnID_Pracownika;
+            
+            private global::System.Data.DataColumn columnNazwa_Zlecenia;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZlecenieDataTable() {
+                this.TableName = "Zlecenie";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ZlecenieDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ZlecenieDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_KZColumn {
+                get {
+                    return this.columnID_KZ;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_ZleceniaColumn {
+                get {
+                    return this.columnID_Zlecenia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_PracownikaColumn {
+                get {
+                    return this.columnID_Pracownika;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Nazwa_ZleceniaColumn {
+                get {
+                    return this.columnNazwa_Zlecenia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZlecenieRow this[int index] {
+                get {
+                    return ((ZlecenieRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ZlecenieRowChangeEventHandler ZlecenieRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ZlecenieRowChangeEventHandler ZlecenieRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ZlecenieRowChangeEventHandler ZlecenieRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ZlecenieRowChangeEventHandler ZlecenieRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddZlecenieRow(ZlecenieRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZlecenieRow AddZlecenieRow(Kontrahent_ZleceniodawcaRow parentKontrahent_ZleceniodawcaRowByFK_ZLECENIE_ZLECENIE__KONTRAHE, PracownikRow parentPracownikRowByFK_ZLECENIE_PRACOWNIK_PRACOWNI, string Nazwa_Zlecenia) {
+                ZlecenieRow rowZlecenieRow = ((ZlecenieRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        null,
+                        Nazwa_Zlecenia};
+                if ((parentKontrahent_ZleceniodawcaRowByFK_ZLECENIE_ZLECENIE__KONTRAHE != null)) {
+                    columnValuesArray[0] = parentKontrahent_ZleceniodawcaRowByFK_ZLECENIE_ZLECENIE__KONTRAHE[0];
+                }
+                if ((parentPracownikRowByFK_ZLECENIE_PRACOWNIK_PRACOWNI != null)) {
+                    columnValuesArray[2] = parentPracownikRowByFK_ZLECENIE_PRACOWNIK_PRACOWNI[0];
+                }
+                rowZlecenieRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowZlecenieRow);
+                return rowZlecenieRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZlecenieRow FindByID_KZID_Zlecenia(decimal ID_KZ, decimal ID_Zlecenia) {
+                return ((ZlecenieRow)(this.Rows.Find(new object[] {
+                            ID_KZ,
+                            ID_Zlecenia})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ZlecenieDataTable cln = ((ZlecenieDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ZlecenieDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnID_KZ = base.Columns["ID_KZ"];
+                this.columnID_Zlecenia = base.Columns["ID_Zlecenia"];
+                this.columnID_Pracownika = base.Columns["ID_Pracownika"];
+                this.columnNazwa_Zlecenia = base.Columns["Nazwa_Zlecenia"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnID_KZ = new global::System.Data.DataColumn("ID_KZ", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_KZ);
+                this.columnID_Zlecenia = new global::System.Data.DataColumn("ID_Zlecenia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Zlecenia);
+                this.columnID_Pracownika = new global::System.Data.DataColumn("ID_Pracownika", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Pracownika);
+                this.columnNazwa_Zlecenia = new global::System.Data.DataColumn("Nazwa_Zlecenia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNazwa_Zlecenia);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_KZ,
+                                this.columnID_Zlecenia}, true));
+                this.columnID_KZ.AllowDBNull = false;
+                this.columnID_Zlecenia.AutoIncrement = true;
+                this.columnID_Zlecenia.AutoIncrementSeed = -1;
+                this.columnID_Zlecenia.AutoIncrementStep = -1;
+                this.columnID_Zlecenia.AllowDBNull = false;
+                this.columnID_Zlecenia.ReadOnly = true;
+                this.columnID_Pracownika.AllowDBNull = false;
+                this.columnNazwa_Zlecenia.AllowDBNull = false;
+                this.columnNazwa_Zlecenia.MaxLength = 100;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZlecenieRow NewZlecenieRow() {
+                return ((ZlecenieRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ZlecenieRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ZlecenieRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ZlecenieRowChanged != null)) {
+                    this.ZlecenieRowChanged(this, new ZlecenieRowChangeEvent(((ZlecenieRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ZlecenieRowChanging != null)) {
+                    this.ZlecenieRowChanging(this, new ZlecenieRowChangeEvent(((ZlecenieRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ZlecenieRowDeleted != null)) {
+                    this.ZlecenieRowDeleted(this, new ZlecenieRowChangeEvent(((ZlecenieRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ZlecenieRowDeleting != null)) {
+                    this.ZlecenieRowDeleting(this, new ZlecenieRowChangeEvent(((ZlecenieRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveZlecenieRow(ZlecenieRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DatadoINZDataSet1 ds = new DatadoINZDataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ZlecenieDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1148,6 +1512,17 @@ namespace AplikacjaInzynierska {
             public void SetAdres_EmailNull() {
                 this[this.tableKontrahent_Zleceniodawca.Adres_EmailColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZlecenieRow[] GetZlecenieRows() {
+                if ((this.Table.ChildRelations["FK_ZLECENIE_ZLECENIE _KONTRAHE"] == null)) {
+                    return new ZlecenieRow[0];
+                }
+                else {
+                    return ((ZlecenieRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ZLECENIE_ZLECENIE _KONTRAHE"])));
+                }
+            }
         }
         
         /// <summary>
@@ -1216,6 +1591,98 @@ namespace AplikacjaInzynierska {
                 }
                 set {
                     this[this.tablePracownik._Stawka_hColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZlecenieRow[] GetZlecenieRows() {
+                if ((this.Table.ChildRelations["FK_ZLECENIE_PRACOWNIK_PRACOWNI"] == null)) {
+                    return new ZlecenieRow[0];
+                }
+                else {
+                    return ((ZlecenieRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ZLECENIE_PRACOWNIK_PRACOWNI"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ZlecenieRow : global::System.Data.DataRow {
+            
+            private ZlecenieDataTable tableZlecenie;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ZlecenieRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableZlecenie = ((ZlecenieDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_KZ {
+                get {
+                    return ((decimal)(this[this.tableZlecenie.ID_KZColumn]));
+                }
+                set {
+                    this[this.tableZlecenie.ID_KZColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_Zlecenia {
+                get {
+                    return ((decimal)(this[this.tableZlecenie.ID_ZleceniaColumn]));
+                }
+                set {
+                    this[this.tableZlecenie.ID_ZleceniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_Pracownika {
+                get {
+                    return ((decimal)(this[this.tableZlecenie.ID_PracownikaColumn]));
+                }
+                set {
+                    this[this.tableZlecenie.ID_PracownikaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Nazwa_Zlecenia {
+                get {
+                    return ((string)(this[this.tableZlecenie.Nazwa_ZleceniaColumn]));
+                }
+                set {
+                    this[this.tableZlecenie.Nazwa_ZleceniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PracownikRow PracownikRow {
+                get {
+                    return ((PracownikRow)(this.GetParentRow(this.Table.ParentRelations["FK_ZLECENIE_PRACOWNIK_PRACOWNI"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ZLECENIE_PRACOWNIK_PRACOWNI"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Kontrahent_ZleceniodawcaRow Kontrahent_ZleceniodawcaRow {
+                get {
+                    return ((Kontrahent_ZleceniodawcaRow)(this.GetParentRow(this.Table.ParentRelations["FK_ZLECENIE_ZLECENIE _KONTRAHE"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ZLECENIE_ZLECENIE _KONTRAHE"]);
                 }
             }
         }
@@ -1287,9 +1754,43 @@ namespace AplikacjaInzynierska {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ZlecenieRowChangeEvent : global::System.EventArgs {
+            
+            private ZlecenieRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZlecenieRowChangeEvent(ZlecenieRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ZlecenieRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
-namespace AplikacjaInzynierska.DatadoINZKontrahenci_PracownikTableAdapters {
+namespace AplikacjaInzynierska.DatadoINZDataSet1TableAdapters {
     
     
     /// <summary>
@@ -1498,7 +1999,7 @@ SELECT ID_KZ, [Czy kontrahent], Imie_KZ, Nazwisko_KZ, NazwaFirmy, NIP, REGON, Nu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatadoINZKontrahenci_Pracownik.Kontrahent_ZleceniodawcaDataTable dataTable) {
+        public virtual int Fill(DatadoINZDataSet1.Kontrahent_ZleceniodawcaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1511,9 +2012,9 @@ SELECT ID_KZ, [Czy kontrahent], Imie_KZ, Nazwisko_KZ, NazwaFirmy, NIP, REGON, Nu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatadoINZKontrahenci_Pracownik.Kontrahent_ZleceniodawcaDataTable GetData() {
+        public virtual DatadoINZDataSet1.Kontrahent_ZleceniodawcaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatadoINZKontrahenci_Pracownik.Kontrahent_ZleceniodawcaDataTable dataTable = new DatadoINZKontrahenci_Pracownik.Kontrahent_ZleceniodawcaDataTable();
+            DatadoINZDataSet1.Kontrahent_ZleceniodawcaDataTable dataTable = new DatadoINZDataSet1.Kontrahent_ZleceniodawcaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1521,14 +2022,14 @@ SELECT ID_KZ, [Czy kontrahent], Imie_KZ, Nazwisko_KZ, NazwaFirmy, NIP, REGON, Nu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatadoINZKontrahenci_Pracownik.Kontrahent_ZleceniodawcaDataTable dataTable) {
+        public virtual int Update(DatadoINZDataSet1.Kontrahent_ZleceniodawcaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatadoINZKontrahenci_Pracownik dataSet) {
+        public virtual int Update(DatadoINZDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Kontrahent_Zleceniodawca");
         }
         
@@ -1960,7 +2461,7 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatadoINZKontrahenci_Pracownik.PracownikDataTable dataTable) {
+        public virtual int Fill(DatadoINZDataSet1.PracownikDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1973,9 +2474,9 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatadoINZKontrahenci_Pracownik.PracownikDataTable GetData() {
+        public virtual DatadoINZDataSet1.PracownikDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatadoINZKontrahenci_Pracownik.PracownikDataTable dataTable = new DatadoINZKontrahenci_Pracownik.PracownikDataTable();
+            DatadoINZDataSet1.PracownikDataTable dataTable = new DatadoINZDataSet1.PracownikDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1983,14 +2484,14 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatadoINZKontrahenci_Pracownik.PracownikDataTable dataTable) {
+        public virtual int Update(DatadoINZDataSet1.PracownikDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatadoINZKontrahenci_Pracownik dataSet) {
+        public virtual int Update(DatadoINZDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Pracownik");
         }
         
@@ -2141,6 +2642,344 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ZlecenieTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public ZlecenieTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Zlecenie";
+            tableMapping.ColumnMappings.Add("ID_KZ", "ID_KZ");
+            tableMapping.ColumnMappings.Add("ID_Zlecenia", "ID_Zlecenia");
+            tableMapping.ColumnMappings.Add("ID_Pracownika", "ID_Pracownika");
+            tableMapping.ColumnMappings.Add("Nazwa_Zlecenia", "Nazwa_Zlecenia");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Zlecenie] WHERE (([ID_KZ] = @Original_ID_KZ) AND ([ID_Zlecenia" +
+                "] = @Original_ID_Zlecenia) AND ([ID_Pracownika] = @Original_ID_Pracownika) AND (" +
+                "[Nazwa_Zlecenia] = @Original_Nazwa_Zlecenia))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_KZ", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 0, "ID_KZ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Zlecenia", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 0, "ID_Zlecenia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Pracownika", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 0, "ID_Pracownika", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa_Zlecenia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa_Zlecenia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Zlecenie] ([ID_KZ], [ID_Pracownika], [Nazwa_Zlecenia]) VALUES " +
+                "(@ID_KZ, @ID_Pracownika, @Nazwa_Zlecenia);\r\nSELECT ID_KZ, ID_Zlecenia, ID_Pracow" +
+                "nika, Nazwa_Zlecenia FROM Zlecenie WHERE (ID_KZ = @ID_KZ) AND (ID_Zlecenia = SCO" +
+                "PE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_KZ", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 0, "ID_KZ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Pracownika", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 0, "ID_Pracownika", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa_Zlecenia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa_Zlecenia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Zlecenie] SET [ID_KZ] = @ID_KZ, [ID_Pracownika] = @ID_Pracownika, [Nazwa_Zlecenia] = @Nazwa_Zlecenia WHERE (([ID_KZ] = @Original_ID_KZ) AND ([ID_Zlecenia] = @Original_ID_Zlecenia) AND ([ID_Pracownika] = @Original_ID_Pracownika) AND ([Nazwa_Zlecenia] = @Original_Nazwa_Zlecenia));
+SELECT ID_KZ, ID_Zlecenia, ID_Pracownika, Nazwa_Zlecenia FROM Zlecenie WHERE (ID_KZ = @ID_KZ) AND (ID_Zlecenia = @ID_Zlecenia)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_KZ", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 0, "ID_KZ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Pracownika", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 0, "ID_Pracownika", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa_Zlecenia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa_Zlecenia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_KZ", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 0, "ID_KZ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Zlecenia", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 0, "ID_Zlecenia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Pracownika", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 0, "ID_Pracownika", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa_Zlecenia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa_Zlecenia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Zlecenia", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 10, 0, "ID_Zlecenia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AplikacjaInzynierska.Properties.Settings.Default.DatadoINZConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID_KZ, ID_Zlecenia, ID_Pracownika, Nazwa_Zlecenia FROM dbo.Zlecenie";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DatadoINZDataSet1.ZlecenieDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DatadoINZDataSet1.ZlecenieDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DatadoINZDataSet1.ZlecenieDataTable dataTable = new DatadoINZDataSet1.ZlecenieDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DatadoINZDataSet1.ZlecenieDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DatadoINZDataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "Zlecenie");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(decimal Original_ID_KZ, decimal Original_ID_Zlecenia, decimal Original_ID_Pracownika, string Original_Nazwa_Zlecenia) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID_KZ));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_ID_Zlecenia));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_ID_Pracownika));
+            if ((Original_Nazwa_Zlecenia == null)) {
+                throw new global::System.ArgumentNullException("Original_Nazwa_Zlecenia");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Nazwa_Zlecenia));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(decimal ID_KZ, decimal ID_Pracownika, string Nazwa_Zlecenia) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ID_KZ));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(ID_Pracownika));
+            if ((Nazwa_Zlecenia == null)) {
+                throw new global::System.ArgumentNullException("Nazwa_Zlecenia");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Nazwa_Zlecenia));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(decimal ID_KZ, decimal ID_Pracownika, string Nazwa_Zlecenia, decimal Original_ID_KZ, decimal Original_ID_Zlecenia, decimal Original_ID_Pracownika, string Original_Nazwa_Zlecenia, decimal ID_Zlecenia) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(ID_KZ));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(ID_Pracownika));
+            if ((Nazwa_Zlecenia == null)) {
+                throw new global::System.ArgumentNullException("Nazwa_Zlecenia");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Nazwa_Zlecenia));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_ID_KZ));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_ID_Zlecenia));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_ID_Pracownika));
+            if ((Original_Nazwa_Zlecenia == null)) {
+                throw new global::System.ArgumentNullException("Original_Nazwa_Zlecenia");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Nazwa_Zlecenia));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(ID_Zlecenia));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(decimal ID_Pracownika, string Nazwa_Zlecenia, decimal Original_ID_KZ, decimal Original_ID_Zlecenia, decimal Original_ID_Pracownika, string Original_Nazwa_Zlecenia) {
+            return this.Update(Original_ID_KZ, ID_Pracownika, Nazwa_Zlecenia, Original_ID_KZ, Original_ID_Zlecenia, Original_ID_Pracownika, Original_Nazwa_Zlecenia, Original_ID_Zlecenia);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2155,6 +2994,8 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
         private Kontrahent_ZleceniodawcaTableAdapter _kontrahent_ZleceniodawcaTableAdapter;
         
         private PracownikTableAdapter _pracownikTableAdapter;
+        
+        private ZlecenieTableAdapter _zlecenieTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -2201,6 +3042,20 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ZlecenieTableAdapter ZlecenieTableAdapter {
+            get {
+                return this._zlecenieTableAdapter;
+            }
+            set {
+                this._zlecenieTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -2226,6 +3081,10 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
                             && (this._pracownikTableAdapter.Connection != null))) {
                     return this._pracownikTableAdapter.Connection;
                 }
+                if (((this._zlecenieTableAdapter != null) 
+                            && (this._zlecenieTableAdapter.Connection != null))) {
+                    return this._zlecenieTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -2245,6 +3104,9 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
                 if ((this._pracownikTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._zlecenieTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -2254,7 +3116,7 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DatadoINZKontrahenci_Pracownik dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DatadoINZDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._kontrahent_ZleceniodawcaTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Kontrahent_Zleceniodawca.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -2274,6 +3136,15 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._zlecenieTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Zlecenie.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._zlecenieTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -2282,7 +3153,7 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DatadoINZKontrahenci_Pracownik dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DatadoINZDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._kontrahent_ZleceniodawcaTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Kontrahent_Zleceniodawca.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -2300,6 +3171,14 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._zlecenieTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Zlecenie.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._zlecenieTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -2308,8 +3187,16 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DatadoINZKontrahenci_Pracownik dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DatadoINZDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._zlecenieTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Zlecenie.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._zlecenieTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._pracownikTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Pracownik.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -2358,7 +3245,7 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DatadoINZKontrahenci_Pracownik dataSet) {
+        public virtual int UpdateAll(DatadoINZDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
@@ -2372,6 +3259,11 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
             }
             if (((this._pracownikTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._pracownikTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._zlecenieTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._zlecenieTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -2423,6 +3315,15 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
                     if (this._pracownikTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._pracownikTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._pracownikTableAdapter.Adapter);
+                    }
+                }
+                if ((this._zlecenieTableAdapter != null)) {
+                    revertConnections.Add(this._zlecenieTableAdapter, this._zlecenieTableAdapter.Connection);
+                    this._zlecenieTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._zlecenieTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._zlecenieTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._zlecenieTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._zlecenieTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -2490,6 +3391,10 @@ SELECT ID_Pracownika, [Czy nasz], Imie_Pracownika, Nazwisko_Pracownika, [Stawka/
                 if ((this._pracownikTableAdapter != null)) {
                     this._pracownikTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pracownikTableAdapter]));
                     this._pracownikTableAdapter.Transaction = null;
+                }
+                if ((this._zlecenieTableAdapter != null)) {
+                    this._zlecenieTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._zlecenieTableAdapter]));
+                    this._zlecenieTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

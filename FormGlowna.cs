@@ -21,7 +21,6 @@ namespace AplikacjaInzynierska
         public FormGlowna()
         {
             InitializeComponent();
-           
         }
 
         private void butFGlownaDodajZLecenie_Click(object sender, EventArgs e)
@@ -69,35 +68,21 @@ namespace AplikacjaInzynierska
             sqlcon = new SqlConnection();
             sqlcon.ConnectionString = @"Data Source = KOMPJULIANA\SQLEXPRESS; Initial Catalog = DatadoINZ; Integrated Security = True";
             sqlcon.Open();
-            sqladapter = new SqlDataAdapter("Select Nazwa_Zlecenia as [Nazwa Zlecenia],NazwaFirmy as [Nazwa Firmy],Imie_Pracownika as [Osoba odpowiedzialna] ,Data_Rozpoczecia as [Data Rozpoczęcia],Data_Zakonczenia as [Data Zakończenia] from Zlecenie join Kontrahent_Zleceniodawca On Kontrahent_Zleceniodawca.ID_KZ = Zlecenie.ID_KZ join Pracownik on Pracownik.ID_Pracownika = Zlecenie.ID_Pracownika", sqlcon);
-            sqlcon.Close();
+            sqladapter = new SqlDataAdapter("Select Nazwa_Zlecenia,NazwaFirmy,Imie_Pracownika from Zlecenie join Kontrahent_Zleceniodawca On Kontrahent_Zleceniodawca.ID_KZ = Zlecenie.ID_KZ join Pracownik on Pracownik.ID_Pracownika = Zlecenie.ID_Pracownika",sqlcon);
             dataset = new DataSet();
+            sqlcon.Close();
             sqladapter.Fill(dataset);
             dataZlecenia.DataSource = dataset.Tables[0];
 
             // TODO: This line of code loads data into the 'datadoINZDataSet.Zlecenie' table. You can move, or remove it, as needed.
             this.zlecenieTableAdapter.Fill(this.datadoINZDataSet.Zlecenie);
             // TODO: This line of code loads data into the 'datadoINZDataSet.Kontrahent_Zleceniodawca' table. You can move, or remove it, as needed.
-            sqlcon.Open();
-            sqladapter = new SqlDataAdapter("Select NazwaFirmy as [Nazwa Firmy],Imie_KZ + ' '+ Nazwisko_KZ as [Imię i Nazwisko Zleceniodawcy],Nip,REGON,Numer_Telefonu as [Numer Telefonu],Adres_Email as [Adres Email] from Kontrahent_Zleceniodawca where [Czy kontrahent] = 1", sqlcon);
-            sqlcon.Close();
-            dataset = new DataSet();
-            sqladapter.Fill(dataset);
-            dataGridViewZleceniobiorca.DataSource = dataset.Tables[0];
-            
-
-            sqlcon.Open();
-            sqladapter = new SqlDataAdapter("Select NazwaFirmy as [Nazwa Firmy],Imie_KZ + ' '+ Nazwisko_KZ as [Imię i Nazwisko Zleceniodawcy],Nip,REGON,Numer_Telefonu as [Numer Telefonu],Adres_Email as [Adres Email] from Kontrahent_Zleceniodawca where [Czy kontrahent] = 0", sqlcon);
-            sqlcon.Close();
-            dataset = new DataSet();
-            sqladapter.Fill(dataset);
-            dataGridViewZleceniodawcy.DataSource = dataset.Tables[0];
-
+            this.kontrahent_ZleceniodawcaTableAdapter.Fill(this.datadoINZDataSet.Kontrahent_Zleceniodawca);
+            // TODO: This line of code loads data into the 'datadoINZDataSet.Pracownik' table. You can move, or remove it, as needed.
             this.pracownikTableAdapter.Fill(this.datadoINZDataSet.Pracownik);
             // TODO: This line of code loads data into the 'datadoINZDataSet.Cennik' table. You can move, or remove it, as needed.
             this.cennikTableAdapter.Fill(this.datadoINZDataSet.Cennik);
 
         }
-        
     }
 }
