@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,16 +47,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatadoINZDataSet.cs">
+      <DependentUpon>DatadoINZDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatadoINZDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatadoINZDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FormGlowna.cs">
+    <Compile Include="DatadoINZDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatadoINZDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajPracownika.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGlowna.Designer.cs">
-      <DependentUpon>FormGlowna.cs</DependentUpon>
+    <Compile Include="FormDodajPracownika.Designer.cs">
+      <DependentUpon>FormDodajPracownika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajPrzedmiot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajPrzedmiot.Designer.cs">
+      <DependentUpon>FormDodajPrzedmiot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajZadanie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajZadanie.Designer.cs">
+      <DependentUpon>FormDodajZadanie.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDodajZlecenie.cs">
       <SubType>Form</SubType>
@@ -63,13 +84,65 @@
     <Compile Include="FormDodajZlecenie.Designer.cs">
       <DependentUpon>FormDodajZlecenie.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDodajZleceniodawce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajZleceniodawce.Designer.cs">
+      <DependentUpon>FormDodajZleceniodawce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGlowna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGlowna.Designer.cs">
+      <DependentUpon>FormGlowna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajKontahenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajKontahenta.Designer.cs">
+      <DependentUpon>FormDodajKontahenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPokazZadania.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPokazZadania.Designer.cs">
+      <DependentUpon>FormPokazZadania.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormZadania.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormZadania.Designer.cs">
+      <DependentUpon>FormZadania.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridShow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormGlowna.resx">
-      <DependentUpon>FormGlowna.cs</DependentUpon>
+    <EmbeddedResource Include="FormDodajPracownika.resx">
+      <DependentUpon>FormDodajPracownika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajPrzedmiot.resx">
+      <DependentUpon>FormDodajPrzedmiot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajZadanie.resx">
+      <DependentUpon>FormDodajZadanie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDodajZlecenie.resx">
       <DependentUpon>FormDodajZlecenie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajZleceniodawce.resx">
+      <DependentUpon>FormDodajZleceniodawce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGlowna.resx">
+      <DependentUpon>FormGlowna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajKontahenta.resx">
+      <DependentUpon>FormDodajKontahenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPokazZadania.resx">
+      <DependentUpon>FormPokazZadania.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormZadania.resx">
+      <DependentUpon>FormZadania.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +163,17 @@
     </None>
     <None Include="DatadoINZDataSet.xss">
       <DependentUpon>DatadoINZDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DatadoINZDataSet1.xsc">
+      <DependentUpon>DatadoINZDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DatadoINZDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatadoINZDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatadoINZDataSet1.xss">
+      <DependentUpon>DatadoINZDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

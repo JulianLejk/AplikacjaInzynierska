@@ -6,5 +6,12 @@ c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\Aplik
 c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.exe
 c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.pdb
 c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.csprojResolveAssemblyReference.cache
-c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormDodajZlecenie.resources
 c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormGlowna.resources
+c:\users\julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormZadania.resources
+C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormDodajKontrahenta.resources
+C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormDodajZleceniodawce.resources
+C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormDodajPrzedmiot.resources
+C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormDodajPracownika.resources
+C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormDodajZadanie.resources
+C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormDodajZlecenie.resources
+C:\Users\Julian\documents\visual studio 2015\Projects\AplikacjaInzynierska\AplikacjaInzynierska\obj\Debug\AplikacjaInzynierska.FormPokazZadania.resources
